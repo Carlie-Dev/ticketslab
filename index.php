@@ -53,6 +53,16 @@ $finaltotal;
             <td><?php echo $finaltotal?><td>
         </tr>
     </table>
+    <!--Null Check-->
+    <p>
+        <?php 
+            if(is_null($snack)){
+                echo "No snack selected";
+            }else{
+                echo "Snack selected!";
+            }
+        ?>
+    </p>
 
 </body>
 </html>
