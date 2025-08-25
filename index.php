@@ -17,6 +17,8 @@ $snack = null;
     <title>Tickets Lab</title>
 </head>
 <body>
-    <h1></h1>
+    <h1><?php echo THEATER_NAME?></h1>
+    <?php echo "Name: " . $customer ?> <!-- concatination -->
+    <p><?php echo "Ticket(s): $tickets" ?></p> <!-- interpolation -->
 </body>
 </html>
