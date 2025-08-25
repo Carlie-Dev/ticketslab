@@ -3,10 +3,11 @@ define('TICKET_PRICE', 12.50);
 define('THEATER_NAME', 'OTC Cinema');
 
 $customer = "Brian Van Halbert";
-$tickets = "2";
+$tickets = "3";
 $hasCoupon = true;
 $snack = null;
-
+$subtotal;
+$finaltotal;
 ?>
 
 <!DOCTYPE html>
@@ -25,5 +26,33 @@ $snack = null;
     <p>Type - $tickets: <?php echo gettype($tickets)?></p>
     <?php $tickets=(int)$tickets?>
     <p>New Type - $tickets: <?php echo gettype($tickets)?></p>
+
+    <!-- price calculation-->
+    <p><?php
+        $subtotal = $tickets*TICKET_PRICE;
+        $finaltotal = $subtotal;
+        if($hasCoupon){
+            $finaltotal = $subtotal - 2.00;
+            echo "YAY! Discount applied!";
+
+        }else{
+            echo "No Discounts Applied";
+        }
+    ?></p>
+    <table>
+        <tr>
+            <th>Subtotal: <th>
+            <td><?php echo $subtotal?><td>
+        </tr>
+        <tr>
+            <th>Discount: <th>
+            <td><?php echo "-$2.00"?><td>
+        </tr>
+        <tr>
+            <th>Total: <th>
+            <td><?php echo $finaltotal?><td>
+        </tr>
+    </table>
+
 </body>
 </html>
