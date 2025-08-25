@@ -18,7 +18,12 @@ $snack = null;
 </head>
 <body>
     <h1><?php echo THEATER_NAME?></h1>
-    <?php echo "Name: " . $customer ?> <!-- concatination -->
+    <p><?php echo "Name: " . $customer ?></p> <!-- concatination -->
     <p><?php echo "Ticket(s): $tickets" ?></p> <!-- interpolation -->
+
+    <!--casting --> 
+    <p>Type - $tickets: <?php echo gettype($tickets)?></p>
+    <?php $tickets=(int)$tickets?>
+    <p>New Type - $tickets: <?php echo gettype($tickets)?></p>
 </body>
 </html>
